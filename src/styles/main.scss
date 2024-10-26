@@ -5,6 +5,7 @@
 @use 'available-devices';
 @use 'faq';
 @use 'footer';
+@use 'header';
 
 @font-face {
     font-family: Avenir;
@@ -23,6 +24,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Avenir, sans-serif;
+    list-style: none;
 }
 
 body {
@@ -71,16 +73,44 @@ body {
 }
 
 .button {
-        display: block;
-        width: 100%;
-        height: 60px;
-        font-size: 18px;
-        color: variables.$corTextoSecundaria;
-        background-color: #6421ff;
-        text-transform: uppercase;
-        border-radius: 4px;
-        margin-top: 2vw;
-        margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    color: variables.$corTextoSecundaria;
+    background-color: variables.$corDeFundoBotaoPrimario;
+    text-transform: uppercase;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 8px 16px;
+    letter-spacing: 1px;
+    border: 1px solid variables.$corDeFundoBotaoPrimario;
+    cursor: pointer;
+
+    &:hover {
+        background-color: lighten(variables.$corDeFundoBotaoPrimario, 3%);
+    }
+
+    &--secondary {
+        background-color: variables.$corDeFundoBotaoSecundario;
+        border-color: variables.$corDeFundoBotaoSecundario;
+
+        &:hover {
+            background-color: lighten(variables.$corDeFundoBotaoSecundario, 3%);
+        }
+    }
+
+    &--dark {
+        background-color: rgba(variables.$corDeFundoBotaoDark, 0.8);
+        border-color: variables.$corTextoSecundaria;
+
+        &:hover {
+            background-color: variables.$corTextoSecundaria;
+            color: variables.$corDeFundo;
+        }
+    }
 }
 
 .text--subItem {
